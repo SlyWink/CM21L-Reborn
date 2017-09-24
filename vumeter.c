@@ -15,14 +15,16 @@
 
 #define PIN_I_ENABLE PB0
 //#define PIN_O_DATA   PB1
-#define PIN_I_AUDIO  PB3
-//#define PIN_O_SHIFT  PB2
+#define PIN_I_AUDIO  PB2
+//#define PIN_O_SHIFT  PB3
 //#define PIN_O_STORE  PB4
 
 //#define ADC_READ_COUNT 4
 #define ADC_DROP 4
 
 #define AUDIO_ZERO 0x1FF
+#define AUDIO_ZERO_MIN (AUDIO_ZERO - 0x10)
+#define AUDIO_ZERO_MAX (AUDIO_ZERO + 0x10)
 
 static volatile uint16_t g_adc_min ;
 static volatile uint16_t g_adc_max ;
@@ -38,9 +40,11 @@ ISR(ADC_vect) {
   l_adc_abs += (ADCH << 8) ;
   if (l_adc_drop) l_adc_drop-- ;
     else {
-      l_adc_rel = (l_adc_abs >= AUDIO_ZERO) ? (l_adc_abs - AUDIO_ZERO) : (AUDIO_ZERO - l_adc_abs) ;
+      if (l_adc_abs >= AUDIO_ZERO_MAX) l_adc_rel = l_adc_abs - AUDIO_ZERO ;
+        else if (l_adc_abs <= AUDIO_ZERO_MIN) l_adc_rel = AUDIO_ZERO - l_adc_abs ;
+          else l_adc_rel = 0 ;
       if (l_adc_rel < g_adc_min) g_adc_min = l_adc_rel ;
-      else if (l_adc_rel > g_adc_max) g_adc_max = l_adc_rel ;
+        else if (l_adc_rel > g_adc_max) g_adc_max = l_adc_rel ;
     }
   if (g_adc_run) ADCSRA |= _BV(ADSC) ; // New acquisition
 }
@@ -73,8 +77,13 @@ int main(void) {
 //   PORTB |= _BV(PIN_I_ENABLE) ;
 
   // ADC init
+/*
   ADMUX = _BV(MUX1) | _BV(MUX0) ;
   ADCSRA = _BV(ADEN) | _BV(ADIE) | _BV(ADPS2) ;
+*/
+  ADMUX =  _BV(REFS1) | _BV(MUX0) ; // Ref. 1.1V, ADC1 (PB2)
+  ADCSRA = _BV(ADEN) | _BV(ADIE) | _BV(ADPS2) ;
+
 
 #ifdef DEBUG
 //  OSCCAL = 0x56;

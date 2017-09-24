@@ -1,0 +1,434 @@
+[VeroDes board definition file v0.01]
+
+DEFBOARD
+{
+   filename    "LCDdisplay.vbd"
+
+   created     "11/09/2017 22:59:22"
+   lastsaved   "15/09/2017 22:52:06"
+
+   boardsize   23 holes, 22 tracks
+
+   components  6
+   {
+      defcompo 1
+      devid    "DP_16PIN03"
+      label    "74HC595"
+      lblopp   False
+      position 11,10
+      rotation none
+      userdev  False
+
+      defcompo 2
+      devid    "POTMIN"
+      label    "P10K"
+      lblopp   True
+      position 10,3
+      rotation right
+      userdev  True
+
+      defcompo 3
+      devid    "CON3T"
+      label    ""
+      lblopp   False
+      position 14,19
+      rotation none
+      userdev  True
+
+      defcompo 4
+      devid    "CON2T"
+      label    "ALIM"
+      lblopp   False
+      position 14,6
+      rotation none
+      userdev  True
+
+      defcompo 5
+      devid    "SP_10PIN"
+      label    "1-10"
+      lblopp   True
+      position 1,4
+      rotation none
+      userdev  False
+
+      defcompo 6
+      devid    "SP_6PIN"
+      label    "11-16"
+      lblopp   True
+      position 1,14
+      rotation none
+      userdev  False
+   }
+
+   wirelinks   21
+   {
+      deflink  1
+      startpos 16,10
+      endpos   16,7
+
+      deflink  2
+      startpos 9,3
+      endpos   9,6
+
+      deflink  3
+      startpos 15,13
+      endpos   15,6
+
+      deflink  4
+      startpos 17,12
+      endpos   17,19
+
+      deflink  5
+      startpos 16,14
+      endpos   16,20
+
+      deflink  6
+      startpos 15,15
+      endpos   15,21
+
+      deflink  7
+      startpos 18,16
+      endpos   18,10
+
+      deflink  8
+      startpos 16,6
+      endpos   16,4
+
+      deflink  9
+      startpos 17,7
+      endpos   17,5
+
+      deflink  10
+      startpos 15,5
+      endpos   15,2
+
+      deflink  11
+      startpos 10,10
+      endpos   10,7
+
+      deflink  12
+      startpos 9,11
+      endpos   9,9
+
+      deflink  13
+      startpos 12,17
+      endpos   12,6
+
+      deflink  14
+      startpos 9,13
+      endpos   9,17
+
+      deflink  15
+      startpos 2,10
+      endpos   2,11
+
+      deflink  16
+      startpos 3,11
+      endpos   3,12
+
+      deflink  17
+      startpos 2,12
+      endpos   2,13
+
+      deflink  18
+      startpos 3,8
+      endpos   3,10
+
+      deflink  19
+      startpos 2,8
+      endpos   2,4
+
+      deflink  20
+      startpos 3,13
+      endpos   3,18
+
+      deflink  21
+      startpos 4,5
+      endpos   4,19
+   }
+
+   trackbreaks 18
+   {
+      defbreak 1
+      position 13,10
+
+      defbreak 2
+      position 13,11
+
+      defbreak 3
+      position 13,12
+
+      defbreak 4
+      position 13,13
+
+      defbreak 5
+      position 13,14
+
+      defbreak 6
+      position 13,15
+
+      defbreak 7
+      position 13,16
+
+      defbreak 8
+      position 13,17
+
+      defbreak 9
+      position 10,6
+
+      defbreak 10
+      position 13,7
+
+      defbreak 11
+      position 5,13
+
+      defbreak 12
+      position 5,12
+
+      defbreak 13
+      position 5,11
+
+      defbreak 14
+      position 5,10
+
+      defbreak 15
+      position 5,8
+
+      defbreak 16
+      position 5,19
+
+      defbreak 17
+      position 5,18
+
+      defbreak 18
+      position 10,17
+   }
+
+   annotations 32
+   {
+      defanno  1
+      message  "QB"
+      txtstyle "Tahoma" 10pt bold
+      position 6,10
+
+      defanno  2
+      message  "QC"
+      txtstyle "Tahoma" 10pt bold
+      position 6,11
+
+      defanno  3
+      message  "QD"
+      txtstyle "Tahoma" 10pt bold
+      position 6,12
+
+      defanno  4
+      message  "QE"
+      txtstyle "Tahoma" 10pt bold
+      position 6,13
+
+      defanno  5
+      message  "QF"
+      txtstyle "Tahoma" 10pt bold
+      position 6,14
+
+      defanno  6
+      message  "QG"
+      txtstyle "Tahoma" 10pt bold
+      position 6,15
+
+      defanno  7
+      message  "QH"
+      txtstyle "Tahoma" 10pt bold
+      position 6,16
+
+      defanno  8
+      message  "QA"
+      txtstyle "Tahoma" 10pt bold
+      position 19,11
+
+      defanno  9
+      message  "QH'"
+      txtstyle "Tahoma" 10pt bold
+      position 19,17
+
+      defanno  10
+      message  "GND"
+      txtstyle "Tahoma" 10pt bold
+      position 6,17
+
+      defanno  11
+      message  "VCC"
+      txtstyle "Tahoma" 10pt bold
+      position 19,10
+
+      defanno  12
+      message  "SER"
+      txtstyle "Tahoma" 10pt bold
+      position 19,12
+
+      defanno  13
+      message  "OE/"
+      txtstyle "Tahoma" 10pt bold
+      position 19,13
+
+      defanno  14
+      message  "RCLK"
+      txtstyle "Tahoma" 10pt bold
+      position 19,14
+
+      defanno  15
+      message  "SRCLK"
+      txtstyle "Tahoma" 10pt bold
+      position 19,15
+
+      defanno  16
+      message  "SRCLR/"
+      txtstyle "Tahoma" 10pt bold
+      position 19,16
+
+      defanno  17
+      message  "GND"
+      txtstyle "Tahoma" 10pt bold
+      position 2,4
+
+      defanno  18
+      message  "+5V"
+      txtstyle "Tahoma" 10pt bold
+      position 2,5
+
+      defanno  19
+      message  "V0"
+      txtstyle "Tahoma" 10pt bold
+      position 2,6
+
+      defanno  20
+      message  "RS"
+      txtstyle "Tahoma" 10pt bold
+      position 2,7
+
+      defanno  21
+      message  "E"
+      txtstyle "Tahoma" 10pt bold
+      position 2,9
+
+      defanno  22
+      message  "DB4"
+      txtstyle "Tahoma" 10pt bold
+      position 2,14
+
+      defanno  23
+      message  "DB5"
+      txtstyle "Tahoma" 10pt bold
+      position 2,15
+
+      defanno  24
+      message  "DB6"
+      txtstyle "Tahoma" 10pt bold
+      position 2,16
+
+      defanno  25
+      message  "DB7"
+      txtstyle "Tahoma" 10pt bold
+      position 2,17
+
+      defanno  26
+      message  "GND"
+      txtstyle "Tahoma" 10pt bold
+      position 19,6
+
+      defanno  27
+      message  "+5V"
+      txtstyle "Tahoma" 10pt bold
+      position 19,7
+
+      defanno  28
+      message  "SER"
+      txtstyle "Tahoma" 10pt bold
+      position 19,19
+
+      defanno  29
+      message  "RCLK"
+      txtstyle "Tahoma" 10pt bold
+      position 19,20
+
+      defanno  30
+      message  "SRCLK"
+      txtstyle "Tahoma" 10pt bold
+      position 19,21
+
+      defanno  31
+      message  "A"
+      txtstyle "Tahoma" 10pt bold
+      position 2,19
+
+      defanno  32
+      message  "K"
+      txtstyle "Tahoma" 10pt bold
+      position 2,18
+   }
+}
+
+
+; ###########################
+; ### EMBEDDED COMPONENTS ###
+; ###########################
+
+DEFCOMPONENT
+{
+   name        "Potentiomètre miniature"
+   identifier  "POTMIN"
+   category    "Resistors"
+   pins        3
+   {
+      pin      1 at 2,1 home anno "1"
+      pin      2 at 1,5 anno "2"
+      pin      3 at 3,5 anno "3"
+   }
+   rects       0
+   circs       1
+   {
+      circ     1 at 24,32, 20
+   }
+   lines       0
+}
+
+DEFCOMPONENT
+{
+   name        "Connecteur 3 trous"
+   identifier  "CON3T"
+   category    "Connectors"
+   pins        3
+   {
+      pin      1 at 1,1 home anno "P1"
+      pin      2 at 1,2 anno "P2"
+      pin      3 at 1,3 anno "P3"
+   }
+   rects       1
+   {
+      rect     1 at 4,4 - 16,40
+   }
+   circs       0
+   lines       0
+}
+
+DEFCOMPONENT
+{
+   name        "Connecteur 2 trous"
+   identifier  "CON2T"
+   category    "Connectors"
+   pins        2
+   {
+      pin      1 at 1,1 home anno "P1"
+      pin      2 at 1,2
+   }
+   rects       1
+   {
+      rect     1 at 4,4 - 16,28
+   }
+   circs       0
+   lines       0
+}
+
+; ###################
+; ### END OF FILE ###
+; ###################
